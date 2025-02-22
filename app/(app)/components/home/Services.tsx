@@ -1,17 +1,10 @@
-'use client';
+"use client";
+import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 
-type Service = {
-  _id: string;
-  title: string;
-  slug: { current: string };
-  icon: { asset: { url: string } };
-  description: string;
-};
 
 function Services() {
-  const [services, setServices] = useState<Service[]>([
+  const services = [
     {
       _id: "1",
       title: "General",
@@ -20,7 +13,7 @@ function Services() {
       description:
         "Our general services are designed to provide comprehensive care for patients of all ages.",
     },
-  ]);
+  ];
 
   return (
     <section
@@ -52,10 +45,12 @@ function Services() {
               className="p-6 sm:p-8 relative rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-shadow duration-300 h-full flex flex-col"
             >
               <span className="inline-block mb-4 p-4 text-4xl text-primary bg-primary-light rounded-full transition duration-300 hover:text-primary-light hover:bg-primary">
-                <img
+                <Image
                   src={service.icon?.asset?.url}
                   alt={service.title}
                   className="h-12 w-12"
+                  width={48}
+                  height={48}
                 />
               </span>
               <h4 className="mb-2 text-xl lowercase text-left font-semibold text-gray-800">

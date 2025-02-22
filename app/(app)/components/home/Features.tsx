@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const doctors = [
   {
@@ -33,17 +34,29 @@ function Features() {
     <section className="max-w-screen-lg mx-auto py-20 px-4" id="pages">
       <div className="flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
         <div>
-          <h2 className="mb-2 text-2xl font-semibold text-gray-800">Our Services</h2>
+          <h2 className="mb-2 text-2xl font-semibold text-gray-800">
+            Our Services
+          </h2>
           <p className="max-w-xl text-gray-500">
-            We take pride in our exceptional team of doctors, each a specialist in their respective fields.
+            We take pride in our exceptional team of doctors, each a specialist
+            in their respective fields.
           </p>
         </div>
       </div>
       <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {doctors.map((doctor, index) => (
-          <div key={index} className="text-center shadow-lg rounded-lg cursor-pointer overflow-hidden">
+          <div
+            key={index}
+            className="text-center shadow-lg rounded-lg cursor-pointer overflow-hidden"
+          >
             <div className="relative overflow-hidden">
-              <img src={doctor.image} alt={doctor.name} className="w-full h-64 object-cover" />
+              <Image
+                src={doctor.image}
+                alt={doctor.name}
+                width={500}
+                height={256}
+                className="w-full h-64 object-cover"
+              />
               <div className="absolute left-0 bottom-[-4rem] w-full flex items-center justify-center gap-4 transition-all duration-500">
                 {socialIcons.map((social, idx) => (
                   <span
@@ -55,7 +68,9 @@ function Features() {
                 ))}
               </div>
             </div>
-            <h4 className="mt-4 text-xl font-semibold text-gray-800">{doctor.name}</h4>
+            <h4 className="mt-4 text-xl font-semibold text-gray-800">
+              {doctor.name}
+            </h4>
             <p className="mb-4 text-gray-500">{doctor.specialty}</p>
           </div>
         ))}

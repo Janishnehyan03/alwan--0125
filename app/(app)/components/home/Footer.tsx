@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 function Footer() {
   return (
@@ -6,19 +7,21 @@ function Footer() {
       <div className="max-w-[var(--max-width)] mx-auto p-6 sm:p-10 md:p-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-[400px_repeat(3,_1fr)] gap-8">
         {/* Logo & Intro */}
         <div className="text-center sm:text-left">
-          <div className="flex flex-col sm:flex-row items-center sm:items-start mb-4">
-            <img
+            <div className="flex flex-col sm:flex-row items-center sm:items-start mb-4">
+            <Image
               src="/alwan-logo.png"
               alt="Alwan Logo"
+              width={80}
+              height={80}
               className="h-20 w-20 mr-0 sm:mr-4"
             />
             <div>
               <h1 className="text-3xl font-bold text-primary">Alwan</h1>
               <p className=" text-secondary">
-                Translation & Document Clearing Services
+              Translation & Document Clearing Services
               </p>
             </div>
-          </div>
+            </div>
           <p className="text-text-dark cursor-pointer transition duration-300 hover:text-primary">
             We are honored to be a part of your healthcare journey and committed
             to delivering compassionate, personalized, and top-notch care every

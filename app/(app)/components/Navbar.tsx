@@ -1,21 +1,17 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
-type Service = {
-  _id: string;
-  title: string;
-  slug: { current: string };
-};
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [services, setServices] = useState<Service[]>([
+  const services = [
     {
       _id: "1",
       title: "General",
       slug: { current: "general" },
     },
-  ]);
+  ];
   const menuRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
@@ -42,7 +38,13 @@ const Navbar = () => {
     <nav className="bg-white shadow-md py-4 px-6 md:px-10 flex items-center justify-between relative">
       {/* Logo */}
       <div className="text-2xl font-semibold">
-        <img src="/alwan.png" className="h-16 md:h-20" alt="Logo" />
+        <Image
+          src="/alwan.png"
+          className="h-16 md:h-20"
+          alt="Logo"
+          width={80}
+          height={80}
+        />
       </div>
 
       {/* Hamburger Menu for Mobile */}
